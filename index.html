@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Packaging Solutions | Custom Non-Woven & Paper Bags</title>
+    <meta name="description" content="Wholesale supplier of high-quality, custom-printed non-woven and paper carry bags for retail, events, and businesses.">
+    
+    <!-- Google Fonts: Inter for a modern, premium look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS configuration -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: '#FAFAFA',       // Clean white/off-white background
+                            primary: '#1A432E',  // Deep forest green primary
+                            accent: '#D4A373',   // Kraft-paper brown accent
+                            text: '#333333',     // Dark charcoal typography
+                            muted: '#666666'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                        'hover': '0 10px 40px -5px rgba(26, 67, 46, 0.1)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #FAFAFA;
+            color: #333333;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #D4A373;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .filter-btn.active {
+            background-color: #1A432E;
+            color: white;
+            border-color: #1A432E;
+        }
+
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px -5px rgba(26, 67, 46, 0.1);
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        .form-input:focus + label, .form-input:not(:placeholder-shown) + label {
+            transform: translateY(-1.5rem) scale(0.85);
+            color: #1A432E;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-brand-text bg-brand-bg flex flex-col min-h-screen">
+
+    <header id="main-header" class="fixed w-full top-0 z-50 transition-all duration-300 bg-brand-bg/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <div class="w-10 h-10 rounded bg-brand-primary flex items-center justify-center text-white mr-3 shadow-md">
+                        <i class="fa-solid fa-bag-shopping text-xl"></i>
+                    </div>
+                    <span class="font-bold text-2xl tracking-tight text-brand-primary">EcoPack<span class="text-brand-accent">B2B</span></span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="nav-link text-sm font-medium text-brand-text hover:text-brand-primary">Home</a>
+                    <a href="#products" class="nav-link text-sm font-medium text-brand-text hover:text-brand-primary">Products</a>
+                    <a href="#customization" class="nav-link text-sm font-medium text-brand-text hover:text-brand-primary">Custom Printing</a>
+                    <a href="#industries" class="nav-link text-sm font-medium text-brand-text hover:text-brand-primary">Industries</a>
+                    <a href="#about" class="nav-link text-sm font-medium text-brand-text hover:text-brand-primary">About Us</a>
+                    <a href="#quote" class="bg-brand-primary text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-opacity-90 transition-colors shadow-md">Request a Quote</a>
+                </nav>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-brand-text hover:text-brand-primary focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="#home" class="block px-3 py-3 text-base font-medium text-brand-text border-b border-gray-50">Home</a>
+                <a href="#products" class="block px-3 py-3 text-base font-medium text-brand-text border-b border-gray-50">Products</a>
+                <a href="#customization" class="block px-3 py-3 text-base font-medium text-brand-text border-b border-gray-50">Custom Printing</a>
+                <a href="#industries" class="block px-3 py-3 text-base font-medium text-brand-text border-b border-gray-50">Industries We Serve</a>
+                <a href="#about" class="block px-3 py-3 text-base font-medium text-brand-text border-b border-gray-50">About Us</a>
+                <a href="#quote" class="block mt-4 text-center bg-brand-primary text-white px-6 py-3 rounded-md text-base font-semibold">Request a Quote</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow pt-20">
+        <section id="home" class="relative bg-brand-bg overflow-hidden py-16 lg:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="lg:grid lg:grid-cols-12 lg:gap-16 items-center">
+                    <div class="lg:col-span-6 text-center lg:text-left mb-12 lg:mb-0">
+                        <div class="inline-block px-4 py-1.5 rounded-full bg-green-100 text-brand-primary font-semibold text-xs tracking-wider uppercase mb-6 shadow-sm border border-green-200">
+                            Premium B2B Packaging
+                        </div>
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-brand-text mb-6 leading-tight">
+                            Custom Carry Bags <br>
+                            <span class="text-brand-primary">Made for Your Business</span>
+                        </h1>
+                        <p class="text-lg text-brand-muted mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                            Explore non-woven and paper carry bags in a wide range of sizes, colors, materials, and custom printing options. Find the right packaging for your brand, retail store, or bulk order.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                            <a href="#products" class="px-8 py-4 bg-brand-primary text-white rounded-md font-semibold text-lg hover:bg-opacity-90 transition-all shadow-md text-center">
+                                Explore Our Products
+                            </a>
+                            <a href="#quote" class="px-8 py-4 bg-white text-brand-primary border-2 border-brand-primary rounded-md font-semibold text-lg hover:bg-brand-primary hover:text-white transition-all shadow-sm text-center">
+                                Get a Bulk Quote
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:col-span-6 relative">
+                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-brand-accent/10 rounded-full blur-3xl -z-10"></div>
+                        
+                        <div class="grid grid-cols-2 gap-4">
+                            <!-- Unsplash Reusable/Non-Woven style bag -->
+                            <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80" alt="Premium Fabric Bags" class="rounded-lg shadow-soft object-cover w-full h-64 sm:h-80 lg:h-96 transform translate-y-8 border border-gray-100">
+                            <!-- Unsplash Paper bags -->
+                            <img src="https://images.unsplash.com/photo-1582735689369-4fe89db7114c?auto=format&fit=crop&w=800&q=80" alt="Kraft Paper Bags" class="rounded-lg shadow-soft object-cover w-full h-64 sm:h-80 lg:h-96 border border-gray-100">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24">
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-10 border-t border-gray-200">
+                    <div class="flex items-start space-x-4">
+                        <div class="text-brand-accent text-2xl mt-1"><i class="fa-solid fa-ruler-combined"></i></div>
+                        <div>
+                            <h3 class="font-semibold text-brand-text">Multiple Sizes & Styles</h3>
+                            <p class="text-sm text-brand-muted mt-1">Tailored to your specific needs.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="text-brand-accent text-2xl mt-1"><i class="fa-solid fa-print"></i></div>
+                        <div>
+                            <h3 class="font-semibold text-brand-text">Custom Logo Printing</h3>
+                            <p class="text-sm text-brand-muted mt-1">High-quality branding display.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="text-brand-accent text-2xl mt-1"><i class="fa-solid fa-boxes-stacked"></i></div>
+                        <div>
+                            <h3 class="font-semibold text-brand-text">Bulk Order Enquiries</h3>
+                            <p class="text-sm text-brand-muted mt-1">Reliable supply for large volumes.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="text-brand-accent text-2xl mt-1"><i class="fa-solid fa-handshake"></i></div>
+                        <div>
+                            <h3 class="font-semibold text-brand-text">Business-Focused Solutions</h3>
+                            <p class="text-sm text-brand-muted mt-1">Dedicated B2B service and support.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-text mb-4">Our Product Catalogue</h2>
+                    <p class="text-lg text-brand-muted max-w-2xl mx-auto">Browse our selection of high-quality carry bags. All items can be customized to your exact specifications.</p>
+                </div>
+
+                <!-- Filters -->
+                <div class="flex justify-center space-x-2 sm:space-x-4 mb-10 overflow-x-auto no-scrollbar pb-2">
+                    <button class="filter-btn active px-6 py-2 rounded-full border border-gray-300 font-medium text-sm transition-colors whitespace-nowrap" data-filter="all">All Products</button>
+                    <button class="filter-btn px-6 py-2 rounded-full border border-gray-300 text-brand-text font-medium text-sm hover:bg-gray-50 transition-colors whitespace-nowrap" data-filter="non-woven">Non-Woven Bags</button>
+                    <button class="filter-btn px-6 py-2 rounded-full border border-gray-300 text-brand-text font-medium text-sm hover:bg-gray-50 transition-colors whitespace-nowrap" data-filter="paper">Paper Bags</button>
+                </div>
+
+                <!-- Product Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8" id="product-grid">
+                    
+                    <!-- Non-Woven Product 1 -->
+                    <div class="product-card bg-white rounded-xl border border-gray-100 shadow-soft overflow-hidden flex flex-col" data-category="non-woven">
+                        <div class="h-64 bg-gray-100 relative">
+                            <!-- Unsplash Reusable Bag -->
+                            <img src="https://images.unsplash.com/photo-1597348989645-46b190ce4918?auto=format&fit=crop&w=800&q=80" alt="D-Cut Non-Woven Bag" class="w-full h-full object-cover">
+                            <span class="absolute top-3 right-3 bg-white/90 backdrop-blur text-xs font-bold px-2 py-1 rounded shadow-sm text-brand-primary">Non-Woven</span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-lg font-bold text-brand-text mb-2">D-Cut Handle Bag</h3>
+                            <ul class="text-sm text-brand-muted space-y-1 mb-4 flex-grow">
+                                <li><i class="fa-solid fa-check text-green-500 mr-2 text-xs"></i><strong>Material:</strong> Polypropylene (PP)</li>
+                                <li><i class="fa-solid fa-check text-green-500 mr-2 text-xs"></i><strong>Sizes:</strong> Custom (W x H)</li>
+                                <li><i class="fa-solid fa-check text-green-500 mr-2 text-xs"></i><strong>GSM:</strong> 40 to 120 GSM</li>
+                                <li><i class="fa-solid fa-check text-green-500 mr-2 text-xs"></i><strong>Print:</strong> Screen / Flexo</li>
+                            </ul>
+                            <button onclick="document.getElementById('bag-type').value='Non-Woven D-Cut'; window.location.href='#quote';" class="w-full py-2.5 bg-gray-50 text-brand-primary font-semibold rounded border border-gray-200 hover:bg-brand-primary hover:text-white transition-colors">
+                                Request Price
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Non-Woven Product 2 -->
+                    <div class="product-card bg-white rounded-xl border border-gray-100 shadow-soft overflow-hidden flex flex-col" data-category="non-woven">
+                        <div class="h-64 bg-gray-100 relative">
+                            <!-- Unsplash Fabric Loop Handle Bag -->
+                            <img src="https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?auto=format&fit=crop&w=800&q=80" alt="Loop Handle Non-Woven Bag" class="w-full h-full object-cover">
+                            <span class="absolute top-3 right-3 bg-white/90 backdrop-blur text-xs font-bold px-2 py-1 rounded shadow-sm text-brand-primary">Non-Woven</span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-lg font-bold text-brand-text mb-2">Loop Handle Bag</h3>
+                            <ul class="text-sm text-brand-muted space-y-1 mb-4 flex-grow">
+                                <li><i class="fa-solid fa-check text-green-500 mr-2 text-xs"></i><strong>Material:</strong> PP Non-Woven</li>
+                                <li><i class="fa-solid fa-check text-green-500 mr-2 text-xs"></i><strong>Gusset:</strong> Bottom/Side options</li>
+                                <li><i class="fa-solid fa-check text-green-500 mr-2 text-xs"></i><strong>Colors:</strong> 30+ Shades</li>
+                                <li><i class="fa-solid fa-check text-green-500 mr-2 text-xs"></i><strong>Usage:</strong> Retail, Grocery</li>
+                            </ul>
+                            <button onclick="document.getElementById('bag-type').value='Non-Woven Loop Handle'; window.location.href='#quote';" class="w-full py-2.5 bg-gray-50 text-brand-primary font-semibold rounded border border-gray-200 hover:bg-brand-primary hover:text-white transition-colors">
+                                Request Price
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Paper Product 1 -->
+                    <div class="product-card bg-white rounded-xl border border-gray-100 shadow-soft overflow-hidden flex flex-col" data-category="paper">
+                        <div class="h-64 bg-gray-100 relative">
+                            <!-- Unsplash Brown Paper Bag -->
+                            <img src="https://images.unsplash.com/photo-1592862804513-43f65057b987?auto=format&fit=crop&w=800&q=80" alt="Kraft Paper Bag" class="w-full h-full object-cover">
+                            <span class="absolute top-3 right-3 bg-white/90 backdrop-blur text-xs font-bold px-2 py-1 rounded shadow-sm text-brand-accent">Paper</span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-lg font-bold text-brand-text mb-2">Brown Kraft Paper Bag</h3>
+                            <ul class="text-sm text-brand-muted space-y-1 mb-4 flex-grow">
+                                <li><i class="fa-solid fa-check text-brand-accent mr-2 text-xs"></i><strong>Material:</strong> Brown Kraft</li>
+                                <li><i class="fa-solid fa-check text-brand-accent mr-2 text-xs"></i><strong>Thickness:</strong> 80-150 GSM</li>
+                                <li><i class="fa-solid fa-check text-brand-accent mr-2 text-xs"></i><strong>Handle:</strong> Twisted Paper</li>
+                                <li><i class="fa-solid fa-check text-brand-accent mr-2 text-xs"></i><strong>Style:</strong> Block bottom</li>
+                            </ul>
+                            <button onclick="document.getElementById('bag-type').value='Kraft Paper Twisted Handle'; window.location.href='#quote';" class="w-full py-2.5 bg-gray-50 text-brand-primary font-semibold rounded border border-gray-200 hover:bg-brand-primary hover:text-white transition-colors">
+                                Request Price
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Paper Product 2 -->
+                    <div class="product-card bg-white rounded-xl border border-gray-100 shadow-soft overflow-hidden flex flex-col" data-category="paper">
+                        <div class="h-64 bg-gray-100 relative">
+                            <!-- Unsplash Premium White Shopping Bag -->
+                            <img src="https://images.unsplash.com/photo-1606836591695-4d58a73eba1e?auto=format&fit=crop&w=800&q=80" alt="Premium White Paper Bag" class="w-full h-full object-cover">
+                            <span class="absolute top-3 right-3 bg-white/90 backdrop-blur border border-gray-200 text-xs font-bold px-2 py-1 rounded shadow-sm text-gray-700">Paper</span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-lg font-bold text-brand-text mb-2">Premium Boutique Bag</h3>
+                            <ul class="text-sm text-brand-muted space-y-1 mb-4 flex-grow">
+                                <li><i class="fa-solid fa-check text-gray-500 mr-2 text-xs"></i><strong>Material:</strong> White Kraft / Art Paper</li>
+                                <li><i class="fa-solid fa-check text-gray-500 mr-2 text-xs"></i><strong>Thickness:</strong> 150-250 GSM</li>
+                                <li><i class="fa-solid fa-check text-gray-500 mr-2 text-xs"></i><strong>Handle:</strong> Cotton Rope / Ribbon</li>
+                                <li><i class="fa-solid fa-check text-gray-500 mr-2 text-xs"></i><strong>Finish:</strong> Matte or Gloss lamination</li>
+                            </ul>
+                            <button onclick="document.getElementById('bag-type').value='Premium White Paper'; window.location.href='#quote';" class="w-full py-2.5 bg-gray-50 text-brand-primary font-semibold rounded border border-gray-200 hover:bg-brand-primary hover:text-white transition-colors">
+                                Request Price
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <p class="text-brand-muted text-sm mb-4">* Minimum order quantities (MOQ) apply and vary by material and printing requirements.</p>
+                    <a href="#quote" class="inline-flex items-center text-brand-primary font-semibold hover:text-brand-accent transition-colors">
+                        View all options in quotation form <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="customization" class="py-20 bg-brand-bg border-t border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Your Bag, Your Size -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden lg:flex mb-20 border border-gray-100">
+                    <div class="lg:w-1/2 bg-brand-primary p-10 lg:p-16 text-white flex flex-col justify-center">
+                        <h2 class="text-3xl font-bold mb-4">Your Bag, Your Size, Your Brand.</h2>
+                        <p class="text-green-100 mb-8 leading-relaxed">
+                            We don't just sell standard bags; we manufacture packaging that fits your exact product dimensions. From tiny gift bags to massive heavy-duty retail carriers.
+                        </p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-ruler"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg">Custom Dimensions</h4>
+                                    <p class="text-sm text-green-100">Specify Length x Width x Gusset (Depth) in mm, cm, or inches.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-layer-group"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg">Material Thickness</h4>
+                                    <p class="text-sm text-green-100">Choose appropriate GSM based on weight capacity requirements.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-palette"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg">Fabric / Paper Color</h4>
+                                    <p class="text-sm text-green-100">Select from standard palettes or request custom dyeing for bulk orders.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2 relative bg-gray-100">
+                        <!-- Unsplash Packaging/Boxes Image as an abstract visual -->
+                        <img src="https://images.unsplash.com/photo-1605600659908-0ef719419d41?auto=format&fit=crop&w=800&q=80" alt="Custom Packaging Materials" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-brand-primary/10"></div>
+                    </div>
+                </div>
+
+                <!-- Custom Printing -->
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-text mb-4">Custom Printing Services</h2>
+                    <p class="text-lg text-brand-muted max-w-2xl mx-auto">Transform a simple carry bag into a walking billboard for your business. We offer high-quality printing tailored to your material choice.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-xl shadow-soft text-center border border-gray-100">
+                        <div class="w-16 h-16 mx-auto bg-gray-50 rounded-full flex items-center justify-center text-brand-primary text-2xl mb-4">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                        <h3 class="font-bold text-xl mb-2">Brand Visibility</h3>
+                        <p class="text-brand-muted text-sm">Print your business logo, brand name, and contact details prominently on one or both sides.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-soft text-center border border-gray-100">
+                        <div class="w-16 h-16 mx-auto bg-gray-50 rounded-full flex items-center justify-center text-brand-primary text-2xl mb-4">
+                            <i class="fa-solid fa-fill-drip"></i>
+                        </div>
+                        <h3 class="font-bold text-xl mb-2">Color Options</h3>
+                        <p class="text-brand-muted text-sm">Single-color cost-effective screen printing to multi-color artwork depending on bag material.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-soft text-center border border-gray-100">
+                        <div class="w-16 h-16 mx-auto bg-gray-50 rounded-full flex items-center justify-center text-brand-primary text-2xl mb-4">
+                            <i class="fa-solid fa-file-arrow-up"></i>
+                        </div>
+                        <h3 class="font-bold text-xl mb-2">Easy Artwork Setup</h3>
+                        <p class="text-brand-muted text-sm">Upload your design (PDF, PNG, JPG). We'll verify print quality and feasibility before production.</p>
+                    </div>
+                </div>
+                
+                <div class="mt-12 text-center">
+                    <div class="inline-block bg-brand-primary text-white px-8 py-4 rounded-lg shadow-md">
+                        <p class="font-medium mb-2">Have a Logo or Design?</p>
+                        <a href="#quote" class="inline-flex items-center bg-white text-brand-primary px-6 py-2 rounded font-bold hover:bg-gray-100 transition-colors">
+                            Send It to Us for a Quote <i class="fa-solid fa-cloud-arrow-up ml-2"></i>
+                        </a>
+                    </div>
+                    <p class="text-xs text-brand-muted mt-4 max-w-lg mx-auto">* Final artwork, print quality, available colors, and production feasibility must be confirmed prior to final order acceptance.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="industries" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-text mb-4">Industries We Serve</h2>
+                    <p class="text-lg text-brand-muted max-w-2xl mx-auto">Providing professional packaging solutions across diverse business sectors.</p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+                    <!-- Industry Cards mapped to appropriate Unsplash images -->
+                    <div class="relative group rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=600&q=80" alt="Clothing Stores" class="w-full h-48 sm:h-56 object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex items-end p-5">
+                            <h3 class="text-white font-semibold text-lg">Clothing & Garments</h3>
+                        </div>
+                    </div>
+                    <div class="relative group rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=600&q=80" alt="Supermarkets" class="w-full h-48 sm:h-56 object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex items-end p-5">
+                            <h3 class="text-white font-semibold text-lg">Retail & Grocery</h3>
+                        </div>
+                    </div>
+                    <div class="relative group rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=600&q=80" alt="Jewellery" class="w-full h-48 sm:h-56 object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex items-end p-5">
+                            <h3 class="text-white font-semibold text-lg">Jewellery & Gifts</h3>
+                        </div>
+                    </div>
+                    <div class="relative group rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80" alt="Bakeries" class="w-full h-48 sm:h-56 object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex items-end p-5">
+                            <h3 class="text-white font-semibold text-lg">Bakeries & Food*</h3>
+                        </div>
+                    </div>
+                    <div class="relative group rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600&q=80" alt="Events" class="w-full h-48 sm:h-56 object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex items-end p-5">
+                            <h3 class="text-white font-semibold text-lg">Exhibitions & Events</h3>
+                        </div>
+                    </div>
+                    <div class="relative group rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=600&q=80" alt="Footwear" class="w-full h-48 sm:h-56 object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex items-end p-5">
+                            <h3 class="text-white font-semibold text-lg">Footwear Brands</h3>
+                        </div>
+                    </div>
+                    <div class="relative group rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=600&q=80" alt="Corporate" class="w-full h-48 sm:h-56 object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex items-end p-5">
+                            <h3 class="text-white font-semibold text-lg">Corporate Gifting</h3>
+                        </div>
+                    </div>
+                    <div class="relative group rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://images.unsplash.com/photo-1586528116311-ad8ed7450900?auto=format&fit=crop&w=600&q=80" alt="Wholesale" class="w-full h-48 sm:h-56 object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex items-end p-5">
+                            <h3 class="text-white font-semibold text-lg">Wholesalers</h3>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-xs text-brand-muted mt-4 text-center">* Suitability for direct food contact must be verified per product specification.</p>
+            </div>
+        </section>
+
+        <section class="py-20 bg-brand-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:grid lg:grid-cols-2 gap-16">
+                    
+                    <!-- Why Choose Us -->
+                    <div>
+                        <h2 class="text-3xl font-bold text-brand-text mb-8">Why Choose Us?</h2>
+                        <div class="space-y-6">
+                            <div class="flex">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="w-8 h-8 rounded-full bg-brand-accent/20 text-brand-accent flex items-center justify-center">
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-semibold text-brand-text">Choice of Materials & Styles</h4>
+                                    <p class="text-brand-muted text-sm mt-1">A comprehensive range of non-woven and paper substrates to match your brand's aesthetic.</p>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="w-8 h-8 rounded-full bg-brand-accent/20 text-brand-accent flex items-center justify-center">
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-semibold text-brand-text">Brand-Focused Customization</h4>
+                                    <p class="text-brand-muted text-sm mt-1">We tailor sizes and print setups strictly to elevate your brand presence.</p>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="w-8 h-8 rounded-full bg-brand-accent/20 text-brand-accent flex items-center justify-center">
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-semibold text-brand-text">Support for Bulk Requirements</h4>
+                                    <p class="text-brand-muted text-sm mt-1">Equipped to handle high-volume orders for large retail chains and wholesale distributors.</p>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="w-8 h-8 rounded-full bg-brand-accent/20 text-brand-accent flex items-center justify-center">
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-semibold text-brand-text">Transparent Quotations</h4>
+                                    <p class="text-brand-muted text-sm mt-1">Enquiry-based pricing ensures you get exactly what you need without hidden costs.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- How Ordering Works -->
+                    <div class="mt-16 lg:mt-0">
+                        <h2 class="text-3xl font-bold text-brand-text mb-8">How Ordering Works</h2>
+                        <div class="relative border-l-2 border-gray-200 ml-3 md:ml-4 space-y-8 pb-4">
+                            
+                            <div class="relative pl-8">
+                                <div class="absolute w-8 h-8 bg-brand-primary text-white rounded-full flex items-center justify-center -left-[17px] top-0 border-4 border-brand-bg font-bold text-sm shadow-sm">1</div>
+                                <h4 class="text-lg font-semibold text-brand-text">Choose Specs</h4>
+                                <p class="text-brand-muted text-sm mt-1">Select your bag type, custom size, material, and handle style.</p>
+                            </div>
+                            
+                            <div class="relative pl-8">
+                                <div class="absolute w-8 h-8 bg-brand-primary text-white rounded-full flex items-center justify-center -left-[17px] top-0 border-4 border-brand-bg font-bold text-sm shadow-sm">2</div>
+                                <h4 class="text-lg font-semibold text-brand-text">Share Details</h4>
+                                <p class="text-brand-muted text-sm mt-1">Provide quantity requirements and upload your logo or printing artwork.</p>
+                            </div>
+
+                            <div class="relative pl-8">
+                                <div class="absolute w-8 h-8 bg-brand-primary text-white rounded-full flex items-center justify-center -left-[17px] top-0 border-4 border-brand-bg font-bold text-sm shadow-sm">3</div>
+                                <h4 class="text-lg font-semibold text-brand-text">Receive Quotation</h4>
+                                <p class="text-brand-muted text-sm mt-1">We will assess feasibility and provide a comprehensive price quote and timeline.</p>
+                            </div>
+
+                            <div class="relative pl-8">
+                                <div class="absolute w-8 h-8 bg-brand-primary text-white rounded-full flex items-center justify-center -left-[17px] top-0 border-4 border-brand-bg font-bold text-sm shadow-sm">4</div>
+                                <h4 class="text-lg font-semibold text-brand-text">Confirm & Produce</h4>
+                                <p class="text-brand-muted text-sm mt-1">Approve final specifications, confirm the order, and we begin production.</p>
+                            </div>
+
+                        </div>
+                        <p class="text-xs text-brand-muted mt-6 bg-gray-100 p-3 rounded border border-gray-200">* Price, MOQ, production time, and shipping depend strictly on the final approved specifications.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="quote" class="py-20 bg-white border-t border-gray-200">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-text mb-4">Request a Bulk Quote</h2>
+                    <p class="text-brand-muted">Fill out the form below with your requirements. Our sales team will review feasibility and get back to you with pricing.</p>
+                </div>
+
+                <div class="bg-brand-bg rounded-2xl p-6 sm:p-10 shadow-soft border border-gray-100 relative">
+                    
+                    <!-- Success Message -->
+                    <div id="form-success" class="hidden absolute inset-0 bg-white/95 backdrop-blur z-10 flex flex-col items-center justify-center rounded-2xl text-center p-8 border border-gray-200 shadow-xl">
+                        <div class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-4xl mb-4">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-brand-text mb-2">Enquiry Submitted!</h3>
+                        <p class="text-brand-muted mb-6">Thank you for your request. We have received your specifications and will contact you shortly.</p>
+                        <button type="button" onclick="resetForm()" class="px-6 py-2 bg-brand-primary text-white rounded font-medium hover:bg-opacity-90">Submit Another</button>
+                    </div>
+
+                    <form id="quote-form" class="space-y-8" onsubmit="handleFormSubmit(event)">
+                        
+                        <!-- Contact Details -->
+                        <div>
+                            <h3 class="text-lg font-bold border-b border-gray-200 pb-2 mb-4">1. Contact Details</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="space-y-1 relative">
+                                    <input type="text" id="full-name" required class="form-input peer w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-brand-primary focus:border-brand-primary outline-none transition-colors placeholder-transparent bg-white" placeholder="Name">
+                                    <label class="absolute left-4 top-3 text-gray-400 text-sm transition-all peer-focus:-translate-y-6 peer-focus:scale-85 bg-white px-1">Full Name *</label>
+                                </div>
+                                <div class="space-y-1 relative">
+                                    <input type="text" id="company-name" required class="form-input peer w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-brand-primary focus:border-brand-primary outline-none transition-colors placeholder-transparent bg-white" placeholder="Company">
+                                    <label class="absolute left-4 top-3 text-gray-400 text-sm transition-all peer-focus:-translate-y-6 peer-focus:scale-85 bg-white px-1">Company / Shop Name *</label>
+                                </div>
+                                <div class="space-y-1 relative">
+                                    <input type="tel" id="phone" required class="form-input peer w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-brand-primary focus:border-brand-primary outline-none transition-colors placeholder-transparent bg-white" placeholder="Phone">
+                                    <label class="absolute left-4 top-3 text-gray-400 text-sm transition-all peer-focus:-translate-y-6 peer-focus:scale-85 bg-white px-1">Phone Number *</label>
+                                </div>
+                                <div class="space-y-1 relative">
+                                    <input type="email" id="email" required class="form-input peer w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-brand-primary focus:border-brand-primary outline-none transition-colors placeholder-transparent bg-white" placeholder="Email">
+                                    <label class="absolute left-4 top-3 text-gray-400 text-sm transition-all peer-focus:-translate-y-6 peer-focus:scale-85 bg-white px-1">Email Address *</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product Specs -->
+                        <div>
+                            <h3 class="text-lg font-bold border-b border-gray-200 pb-2 mb-4">2. Product Specifications</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="space-y-1">
+                                    <label class="block text-sm font-medium text-brand-text mb-1">Bag Category *</label>
+                                    <select id="bag-type" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-brand-primary focus:border-brand-primary outline-none bg-white">
+                                        <option value="">Select Category...</option>
+                                        <optgroup label="Non-Woven Bags">
+                                            <option value="Non-Woven D-Cut">D-Cut Handle</option>
+                                            <option value="Non-Woven W-Cut">W-Cut (U-Cut) Handle</option>
+                                            <option value="Non-Woven Loop Handle">Loop Handle</option>
+                                            <option value="Non-Woven Box Style">Box Style</option>
+                                        </optgroup>
+                                        <optgroup label="Paper Bags">
+                                            <option value="Kraft Paper Twisted Handle">Kraft Paper - Twisted Handle</option>
+                                            <option value="Kraft Paper Flat Handle">Kraft Paper - Flat Handle</option>
+                                            <option value="Premium White Paper">White Paper - Rope/Ribbon</option>
+                                        </optgroup>
+                                        <option value="Other">Other / Unsure</option>
+                                    </select>
+                                </div>
+                                <div class="space-y-1 relative pt-6">
+                                    <input type="number" id="quantity" required min="100" class="form-input peer w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-brand-primary focus:border-brand-primary outline-none transition-colors placeholder-transparent bg-white" placeholder="Qty">
+                                    <label class="absolute left-4 top-9 text-gray-400 text-sm transition-all peer-focus:-translate-y-6 peer-focus:scale-85 bg-white px-1">Required Quantity *</label>
+                                </div>
+                                <div class="space-y-1 relative pt-2 md:col-span-2">
+                                    <input type="text" id="dimensions" required class="form-input peer w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-brand-primary focus:border-brand-primary outline-none transition-colors placeholder-transparent bg-white" placeholder="Dimensions">
+                                    <label class="absolute left-4 top-5 text-gray-400 text-sm transition-all peer-focus:-translate-y-6 peer-focus:scale-85 bg-white px-1">Required Dimensions (L x W x Gusset) *</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Printing & Upload -->
+                        <div>
+                            <h3 class="text-lg font-bold border-b border-gray-200 pb-2 mb-4">3. Custom Printing</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="space-y-1 md:col-span-2">
+                                    <label class="block text-sm font-medium text-brand-text mb-1">Printing Requirements</label>
+                                    <select id="print-type" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-brand-primary focus:border-brand-primary outline-none bg-white">
+                                        <option value="No Printing">No Printing (Plain Bags)</option>
+                                        <option value="Single Color - 1 Side">Single Color - 1 Side</option>
+                                        <option value="Single Color - 2 Sides">Single Color - 2 Sides</option>
+                                        <option value="Multi Color">Multi Color Artwork</option>
+                                    </select>
+                                </div>
+                                <div class="space-y-1 md:col-span-2">
+                                    <label class="block text-sm font-medium text-brand-text mb-2">Upload Logo / Artwork (UI Demo Only)</label>
+                                    <div class="border-2 border-dashed border-gray-300 bg-white rounded-md p-6 text-center hover:bg-gray-50 transition-colors cursor-pointer">
+                                        <i class="fa-solid fa-cloud-arrow-up text-3xl text-gray-400 mb-2"></i>
+                                        <p class="text-sm text-brand-muted">Click to browse or drag and drop file here</p>
+                                        <p class="text-xs text-gray-400 mt-1">Supported: PNG, JPG, PDF (Max 5MB)</p>
+                                        <input type="file" id="artwork" class="hidden" accept=".png,.jpg,.jpeg,.pdf">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Consent & Submit -->
+                        <div class="space-y-4 pt-6 border-t border-gray-200">
+                            <label class="flex items-start space-x-3 cursor-pointer">
+                                <input type="checkbox" required class="mt-1 h-4 w-4 text-brand-primary border-gray-300 rounded focus:ring-brand-primary">
+                                <span class="text-sm text-brand-muted">I consent to being contacted by EcoPack B2B regarding this enquiry and agree to the privacy policy.</span>
+                            </label>
+                            
+                            <button type="submit" class="w-full bg-brand-primary text-white font-bold py-4 rounded-md text-lg hover:bg-opacity-90 transition-all shadow-md flex justify-center items-center">
+                                Submit Bulk Enquiry <i class="fa-solid fa-paper-plane ml-2"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-20 bg-brand-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-brand-text mb-6">About Us</h2>
+                        <p class="text-brand-muted mb-4 leading-relaxed">
+                            [Business Name Placeholder] is a dedicated manufacturer and supplier of customizable non-woven and paper carry bags. With a strong focus on serving business customers, we understand the importance of quality packaging that represents your brand accurately.
+                        </p>
+                        <p class="text-brand-muted mb-6 leading-relaxed">
+                            Based in [Location Placeholder], our production facility is equipped to handle bulk orders with strict quality control processes. From retail shops to large corporate events, we provide reliable packaging solutions tailored to your specifications.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 border-t border-gray-200 pt-6">
+                            <div>
+                                <h4 class="font-bold text-xl text-brand-primary">[X]+</h4>
+                                <p class="text-sm text-brand-muted">Years Experience</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xl text-brand-primary">[Location]</h4>
+                                <p class="text-sm text-brand-muted">Manufacturing Base</p>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-6 italic">Note: Replace bracketed placeholders with verified business information.</p>
+                    </div>
+                    <div class="mt-10 lg:mt-0 relative">
+                        <!-- Unsplash Factory/Manufacturing Image -->
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="Factory Operations" class="rounded-lg shadow-md w-full h-[400px] object-cover border border-gray-200">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 bg-white border-t border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div class="p-6">
+                        <div class="w-12 h-12 mx-auto bg-brand-bg rounded-full flex items-center justify-center text-brand-primary text-xl mb-4 border border-gray-100 shadow-sm">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <h3 class="font-bold mb-2">Office / Factory Address</h3>
+                        <p class="text-sm text-brand-muted">[Street Address, Industrial Area]<br>[City, State, PIN Code]</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="w-12 h-12 mx-auto bg-brand-bg rounded-full flex items-center justify-center text-brand-primary text-xl mb-4 border border-gray-100 shadow-sm">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <h3 class="font-bold mb-2">Contact Numbers</h3>
+                        <p class="text-sm text-brand-muted">Sales: [+91 00000 00000]<br>Office: [+91 00000 00000]</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="w-12 h-12 mx-auto bg-brand-bg rounded-full flex items-center justify-center text-brand-primary text-xl mb-4 border border-gray-100 shadow-sm">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <h3 class="font-bold mb-2">Business Hours</h3>
+                        <p class="text-sm text-brand-muted">Mon - Sat: 9:00 AM - 6:00 PM<br>Sunday: Closed</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-brand-primary text-white pt-16 pb-8 border-t border-[#122e1f]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                
+                <!-- Brand Info -->
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-8 h-8 rounded bg-white text-brand-primary flex items-center justify-center mr-2">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                        </div>
+                        <span class="font-bold text-xl tracking-tight text-white">EcoPack<span class="text-brand-accent">B2B</span></span>
+                    </div>
+                    <p class="text-green-100 text-sm mb-4 leading-relaxed">
+                        Premium B2B supplier of custom printed non-woven and paper carry bags. Tailored packaging solutions for retail and wholesale.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-brand-accent transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                        <a href="#" class="text-white hover:text-brand-accent transition-colors"><i class="fa-brands fa-facebook text-xl"></i></a>
+                    </div>
+                </div>
+
+                <!-- Products -->
+                <div>
+                    <h4 class="font-bold text-lg mb-4 text-brand-accent">Products</h4>
+                    <ul class="space-y-2 text-sm text-green-100">
+                        <li><a href="#products" class="hover:text-white transition-colors">Non-Woven D-Cut Bags</a></li>
+                        <li><a href="#products" class="hover:text-white transition-colors">Non-Woven Loop Handle</a></li>
+                        <li><a href="#products" class="hover:text-white transition-colors">Kraft Paper Bags</a></li>
+                        <li><a href="#products" class="hover:text-white transition-colors">Premium White Paper Bags</a></li>
+                        <li><a href="#customization" class="hover:text-white transition-colors">Custom Size Manufacturing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-bold text-lg mb-4 text-brand-accent">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-green-100">
+                        <li><a href="#home" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#about" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#industries" class="hover:text-white transition-colors">Industries Served</a></li>
+                        <li><a href="#customization" class="hover:text-white transition-colors">Custom Printing Guide</a></li>
+                        <li><a href="#quote" class="hover:text-white transition-colors">Request a Quote</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-bold text-lg mb-4 text-brand-accent">Contact</h4>
+                    <ul class="space-y-3 text-sm text-green-100">
+                        <li class="flex items-start"><i class="fa-solid fa-envelope mt-1 mr-3"></i> sales@ecopackb2b.com</li>
+                        <li class="flex items-start"><i class="fa-solid fa-phone mt-1 mr-3"></i> +91 00000 00000</li>
+                        <li class="flex items-start"><i class="fa-solid fa-location-dot mt-1 mr-3"></i> [City, State, Country]</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-green-800/50 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-green-200">
+                <p>&copy; 2026 EcoPack B2B. All rights reserved.</p>
+                <div class="mt-4 md:mt-0 space-x-4">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/910000000000?text=Hello,%20I%20am%20looking%20for%20a%20bulk%20quotation%20for%20custom%20carry%20bags." 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-lg hover:scale-110 transition-transform duration-300 focus:outline-none"
+       aria-label="Contact us on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // Mobile Menu Toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                const icon = mobileMenuBtn.querySelector('i');
+                if (mobileMenu.classList.contains('hidden')) {
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                } else {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-xmark');
+                }
+            });
+
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    const icon = mobileMenuBtn.querySelector('i');
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                });
+            });
+
+            // Sticky Header Shadow
+            const header = document.getElementById('main-header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 10) {
+                    header.classList.add('shadow-md');
+                    header.classList.remove('shadow-sm');
+                } else {
+                    header.classList.remove('shadow-md');
+                    header.classList.add('shadow-sm');
+                }
+            });
+
+            // Product Filtering Logic
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const productCards = document.querySelectorAll('.product-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => {
+                        b.classList.remove('active', 'bg-brand-primary', 'text-white');
+                        b.classList.add('text-brand-text');
+                    });
+                    
+                    btn.classList.add('active', 'bg-brand-primary', 'text-white');
+                    btn.classList.remove('text-brand-text');
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    productCards.forEach(card => {
+                        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                            card.style.display = 'flex';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Artwork Upload UI Mock
+            const artworkInput = document.getElementById('artwork');
+            if(artworkInput) {
+                const dropzone = artworkInput.parentElement;
+                dropzone.addEventListener('click', () => artworkInput.click());
+                
+                artworkInput.addEventListener('change', function() {
+                    if(this.files && this.files[0]) {
+                        const fileName = this.files[0].name;
+                        dropzone.querySelector('p.text-sm').innerHTML = `<span class="text-brand-primary font-bold"><i class="fa-solid fa-file-check"></i> File selected:</span> ${fileName}`;
+                    }
+                });
+            }
+        });
+
+        // Form Submission Simulation
+        function handleFormSubmit(event) {
+            event.preventDefault(); 
+            const successDiv = document.getElementById('form-success');
+            successDiv.classList.remove('hidden');
+        }
+
+        function resetForm() {
+            const form = document.getElementById('quote-form');
+            const successDiv = document.getElementById('form-success');
+            
+            form.reset();
+            
+            const dropzoneP = document.querySelector('#artwork').parentElement.querySelector('p.text-sm');
+            if(dropzoneP) {
+                dropzoneP.textContent = 'Click to browse or drag and drop file here';
+            }
+
+            successDiv.classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
